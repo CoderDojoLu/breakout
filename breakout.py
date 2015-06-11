@@ -24,9 +24,9 @@ BLOCK_H = BLOCK_W / 4
 BLOCK_COLOURS = "purple", "lightgreen", "lightblue", "orange"
 
 #
-# Create <N_BLOCKS> blocks, filling the screen. Each block is as
-# high as a quarter of its width, making them proportional as the
-# number of blocks or the screen size changes.
+# Create <N_BLOCKS> blocks, filling the full width of the screen. 
+# Each block is as high as a quarter of its width, so they remain
+# proportional as the number of blocks or the screen size changes.
 #
 # The block colours cycle through <BLOCK_COLOURS>
 #
@@ -63,8 +63,6 @@ def on_mouse_move(pos):
     """
     x, y = pos
     bat.centrex = x
-    bat.left = max(bat.left, 0)
-    bat.right = min(bat.right, WIDTH)
 
 def update():
     """Move the ball and then determine what effect its new position has
