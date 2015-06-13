@@ -39,7 +39,7 @@ blocks = []
 for n_row in range(N_ROWS):
     for n_block in range(N_BLOCKS):
         block = Rect(n_block * BLOCK_W, n_row * BLOCK_H, BLOCK_W, BLOCK_H)
-        block.colour = BLOCK_COLOURS[n_block % len(BLOCK_COLOURS)]
+        block.colour = BLOCK_COLOURS[(n_row + n_block) % len(BLOCK_COLOURS)]
         blocks.append(block)
 
 def draw_blocks():
